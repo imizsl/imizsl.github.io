@@ -84,7 +84,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="技术," />
 
 
 
@@ -101,13 +101,14 @@
 
 
 <meta name="description" content="为何使用swagger为了便于不同团队人员的沟通，通常我们需要维护专门的接口文档来记录对外的接口（传统点的用word格式，新潮点的用markdown格式），但往往还是存在如下的问题：  代码和接口文档同步依赖开发人员具备非常好的习惯，或者需要有严格的管理（管理成本较高）。但实际上很难做到，往往代码更新了，接口文档没有及时更新。 接口众多，并且细节复杂，接口的编写投入工作量大，而且高质量地创建这份文">
+<meta name="keywords" content="技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="swagger在项目中的应用">
 <meta property="og:url" content="http://spiritdev.cn/2017/09/15/swagger在项目中的应用/index.html">
 <meta property="og:site_name" content="进取的心(内测中)">
 <meta property="og:description" content="为何使用swagger为了便于不同团队人员的沟通，通常我们需要维护专门的接口文档来记录对外的接口（传统点的用word格式，新潮点的用markdown格式），但往往还是存在如下的问题：  代码和接口文档同步依赖开发人员具备非常好的习惯，或者需要有严格的管理（管理成本较高）。但实际上很难做到，往往代码更新了，接口文档没有及时更新。 接口众多，并且细节复杂，接口的编写投入工作量大，而且高质量地创建这份文">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-19T06:11:25.000Z">
+<meta property="og:updated_time" content="2017-09-20T01:51:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swagger在项目中的应用">
 <meta name="twitter:description" content="为何使用swagger为了便于不同团队人员的沟通，通常我们需要维护专门的接口文档来记录对外的接口（传统点的用word格式，新潮点的用markdown格式），但往往还是存在如下的问题：  代码和接口文档同步依赖开发人员具备非常好的习惯，或者需要有严格的管理（管理成本较高）。但实际上很难做到，往往代码更新了，接口文档没有及时更新。 接口众多，并且细节复杂，接口的编写投入工作量大，而且高质量地创建这份文">
@@ -211,6 +212,26 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -293,6 +314,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -323,9 +366,9 @@
         <h2 id="为何使用swagger"><a href="#为何使用swagger" class="headerlink" title="为何使用swagger"></a>为何使用swagger</h2><p>为了便于不同团队人员的沟通，通常我们需要维护专门的接口文档来记录对外的接口（传统点的用word格式，新潮点的用markdown格式），但往往还是存在如下的问题：</p>
 <ul>
 <li>代码和接口文档同步依赖开发人员具备非常好的习惯，或者需要有严格的管理（管理成本较高）。但实际上很难做到，往往代码更新了，接口文档没有及时更新。</li>
-<li>接口众多，并且细节复杂，接口的编写投入工作量大，而且高质量地创建这份文档本身就是件非常吃力的事</li>
+<li>接口众多，并且细节复杂，接口的编写投入工作量大，而且高质量地创建这份文档本身就是件非常吃力的事。<a id="more"></a>
+swagger的出现很好的解决了上述两个问题，开发人员在编写业务代码的同时，只需简要的注解，就完成了接口的定义，在实例运行的同时，自动生成接口文档。</li>
 </ul>
-<p>swagger的出现很好的解决了上述两个问题，开发人员在编写业务代码的同时，只需简要的注解，就完成了接口的定义，在实例运行的同时，自动生成接口文档。</p>
 <p>另外，swagger还提供接口测试功能，方便单元测试。</p>
 <p><strong>注</strong> 本文所提的swagger特指springfox-swagger2</p>
 <h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ul>
@@ -345,6 +388,14 @@
     
     
 
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wechat-qcode.jpg" alt="SpiritDev wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
     
 
     
@@ -382,6 +433,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/技术/" rel="tag"># 技术</a>
+          
+        </div>
+      
 
       
       
@@ -391,18 +448,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/15/RabbitMQ数据丢失的原因/" rel="next" title="RabbitMQ数据丢失的原因">
-                <i class="fa fa-chevron-left"></i> RabbitMQ数据丢失的原因
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/18/SpringCloud(Dalston)踩过的坑/" rel="prev" title="SpringCloud(Dalston)踩过的坑">
-                SpringCloud(Dalston)踩过的坑 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/15/RabbitMQ数据丢失的原因/" rel="prev" title="RabbitMQ数据丢失的原因">
+                RabbitMQ数据丢失的原因 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -493,7 +546,25 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
